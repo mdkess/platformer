@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="40" height="20" tilewidth="16" tileheight="16">
+ <tileset firstgid="1" name="tileset" tilewidth="16" tileheight="16" spacing="1">
+  <image source="res/tileset.png" trans="f5c5ef" width="186" height="186"/>
+  <tile id="0">
+   <properties>
+    <property name="bouyancy" value="1.3"/>
+    <property name="water" value="true"/>
+   </properties>
+  </tile>
+  <tile id="33">
+   <properties>
+    <property name="friction" value="1.0"/>
+    <property name="solid" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Tile Layer 1" width="40" height="20">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAA9WWOQrDMBBFlSYYH8PnSJfC4DJxXGYps5RZrp8xWCCGWb4SGZIPr5GlmSfJYDchhObP2E3w8W4iPu+JwanVJWjPc9zGnjEDc9EiOXbAvD4ZT/cgnY3n4IX3RuZJifvibiWinZs0z9rDGG8fvJY3bwziFmsid2X15fevZe0gJWcfyLloLi3gpznO4aetjzUsv088v/WTaniOqWdbyG9PHIgjcXLm5tyv936jfmfiQlyJG+i3Mvy0b0Ou35KoiTvxIJ7EK9j3gvZGEtfWipv1HbRqlgpytun/AvItRrMp4FfCw+q9cEj9+B1vZ3RL3x3Ub6SaqFktPib1qxT4OtRN8pNcpTGO908pzfXcPL9f4Q16wuuggAwAAA==
+  </data>
+ </layer>
+ <objectgroup color="#ff00ff" name="Object Layer 1" width="40" height="20">
+  <object name="AreaTrigger1" type="AreaTrigger" x="336" y="96" width="80" height="96">
+   <properties>
+    <property name="children" value="ParticleEmitter1 Timer1"/>
+    <property name="onEnter" value="Timer1:reset"/>
+    <property name="onExit" value="Timer1:stop"/>
+   </properties>
+  </object>
+  <object name="Timer1" type="TimerTrigger" x="544" y="96" width="32" height="32">
+   <properties>
+    <property name="children" value="ParticleEmitter2 Timer2"/>
+    <property name="duration" value="5.0"/>
+   </properties>
+  </object>
+  <object name="Timer2" type="TimerTrigger" x="576" y="160" width="32" height="32">
+   <properties>
+    <property name="children" value="ParticleEmitter3"/>
+    <property name="duration" value="7.0"/>
+   </properties>
+  </object>
+  <object name="ParticleEmitter1" type="AreaParticleEmitter" x="352" y="48" width="112" height="16"/>
+  <object name="ParticleEmitter2" type="AreaParticleEmitter" x="496" y="48" width="112" height="16"/>
+  <object name="ParticleEmitter3" type="AreaParticleEmitter" x="512" y="256" width="112" height="48"/>
+ </objectgroup>
+</map>
